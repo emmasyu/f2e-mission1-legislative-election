@@ -1,0 +1,23 @@
+<template>
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="z-30"
+  >
+    <rect width="40" height="40" rx="20" :fill="bgColor" />
+    <path
+      d="M17.198 29.5H21.198V21.49H24.802L25.198 17.51H21.198V15.5C21.198 15.2348 21.3034 14.9804 21.4909 14.7929C21.6784 14.6054 21.9328 14.5 22.198 14.5H25.198V10.5H22.198C20.8719 10.5 19.6002 11.0268 18.6625 11.9645C17.7248 12.9021 17.198 14.1739 17.198 15.5V17.51H15.198L14.802 21.49H17.198V29.5Z"
+      :fill="color"
+    />
+  </svg>
+</template>
+
+<script setup lang="ts">
+defineProps<{
+  color: string
+  bgColor: string
+}>()
+</script>
