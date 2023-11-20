@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import BannerItemsGroup from './BannerItemsGroup.vue'
+import BannerItemsGroup from './header/BannerItemsGroup.vue'
 </script>
 
 <style scoped>
