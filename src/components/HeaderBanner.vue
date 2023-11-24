@@ -4,7 +4,7 @@
       <img
         src="../assets/images/header-cat.svg"
         alt="header cat"
-        class="absolute bottom-0 left-1/2 -translate-x-1/2 mb-[-48px] max-sm:scale-50 origin-bottom"
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 mb-[-48px] max-sm:scale-[1.6] origin-bottom"
       />
       <img
         src="../assets/images/murr-financial-success.svg"
@@ -15,11 +15,14 @@
         <p
           class="sm:text-6xl lg:text-[100px] xl:text-[120px] text-5xl whitespace-nowrap sm:flex text-center max-sm:mb-40"
         >
-          <span>喵的未來</span><span class="sm:indent-20 xl:indent-52 block">人的希望</span>
+          <span class="leading-normal">喵的未來</span
+          ><span class="sm:indent-20 xl:indent-52 block leading-normal">人的希望</span>
         </p>
         <h2 class="text-[40px] lg:text-5xl text-center">
           喵立翰
-          <span class="font-gaegu font-normal text-6xl lg:text-7xl max-sm:block">Miao Li-Han</span>
+          <span class="font-gaegu font-normal text-6xl lg:text-7xl max-sm:block leading-normal"
+            >Miao Li-Han</span
+          >
         </h2>
       </div>
       <BannerItemsGroup />
