@@ -11,6 +11,7 @@ module.exports = {
       'sans': ['"Noto Sans TC"', ...defaultTheme.fontFamily.sans],
       'serif': ['"Noto Serif TC"', ...defaultTheme.fontFamily.sans],
       'gaegu': ['Gaegu', ...defaultTheme.fontFamily.sans],
+      'inter': ['Inter', ...defaultTheme.fontFamily.sans]
     },
     extend: {
       colors: {
