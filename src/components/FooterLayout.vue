@@ -28,13 +28,12 @@
       <div class="flex flex-col justify-between -mb-2 max-xl:gap-4">
         <h3>關注喵喵最新動態</h3>
         <div class="flex gap-5">
-          <a
-            href="#"
-            v-for="(icon, i) in [IconFacebook, IconInstagram, IconYoutube]"
-            :key="i"
-            class="hover:opacity-75"
-          >
-            <component :is="icon" color="white" bgColor="#FFDC91" />
+          <a href="#" v-for="(icon, i) in [IconFacebook, IconInstagram, IconYoutube]" :key="i">
+            <component
+              :is="icon"
+              color="fill-white"
+              class="fill-secondary hover:fill-secondary-light"
+            />
           </a>
         </div>
         <p class="max-sm:text-xs">版權聲明：© 2023 喵立翰 Miao Li-Han 版權所有。</p>

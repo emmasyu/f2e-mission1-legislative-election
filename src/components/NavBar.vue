@@ -33,7 +33,7 @@
               v-for="(icon, i) in [IconFacebook, IconInstagram, IconYoutube]"
               :key="i"
               @click="closeMenu"
-              ><component :is="icon" class="fill-white max-sm:hover:fill-secondary"
+              ><component :is="icon" color="fill-primary group-hover:fill-primary-light" class="fill-white max-sm:hover:fill-secondary"
             /></a>
           </li>
         </ul>
