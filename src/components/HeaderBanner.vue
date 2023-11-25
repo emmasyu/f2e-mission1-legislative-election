@@ -11,7 +11,9 @@
         alt="murr financial success"
         class="absolute z-10 sm:top-0 top-1/2 max-sm:-translate-y-1/2 mt-[72px] sm:ms-48 max-sm:scale-75"
       />
-      <div class="z-20 text-primary font-serif font-bold pt-36 max-sm:self-start flex flex-col justify-between max-sm:h-full">
+      <div
+        class="z-20 text-primary font-serif font-bold pt-36 max-sm:self-start flex flex-col justify-between max-sm:h-full"
+      >
         <p
           class="sm:text-6xl lg:text-[100px] xl:text-[120px] text-5xl whitespace-nowrap sm:flex text-center"
         >

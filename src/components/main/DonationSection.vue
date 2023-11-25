@@ -13,7 +13,7 @@
       <div
         v-for="item in donationPlans"
         :key="item.title"
-        class="w-60 py-8 px-4 bg-white border border-primary rounded-[20px] shadow-[6px_8px_0_#FADCA8]"
+        class="w-60 py-8 px-4 bg-white border border-primary rounded-[20px] shadow-[6px_8px_0_#FADCA8] hover:shadow-[6px_8px_0_#F4CA80]"
       >
         <h3 class="text-[28px] font-bold mb-4">「{{ item.title }}」</h3>
         <p class="text-xl mb-10">捐款新台幣{{ thousandSeparator(item.price.toString()) }}元</p>
@@ -24,12 +24,14 @@
     <div class="relative z-10">
       <p class="text-[28px] font-bold mb-4">「 自訂贊助金額 」</p>
       <p class="sm:text-xl font-bold text-primary-light mb-4">目前小額贊助總金額：NT$ 655,873</p>
-      <label for="price" class="relative">
+      <label for="price" class="relative group">
         <input
           type="text"
-          class="max-w-[416px] w-full bg-transparent border-b-2 border-primary text-xl p-2 ps-16 mb-8"
+          class="max-w-[416px] w-full bg-transparent border-b-2 border-primary text-xl p-2 ps-16 mb-8 group-hover:border-primary-light focus:outline-none focus:bg-[#E9FEFD]"
         />
-        <span class="absolute font-bold text-xl left-3 top-0">NT$</span> </label
+        <span class="absolute font-bold text-xl left-3 top-0 group-hover:text-primary-light"
+          >NT$</span
+        > </label
       ><br />
       <BaseButton>馬上支持 !</BaseButton>
     </div>
@@ -42,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseButton from '../base/BaseButton.vue';
+import BaseButton from '../base/BaseButton.vue'
 
 const donationPlans = [
   {
