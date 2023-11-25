@@ -17,9 +17,7 @@
       >
         <h3 class="text-[28px] font-bold mb-4">「{{ item.title }}」</h3>
         <p class="text-xl mb-10">捐款新台幣{{ thousandSeparator(item.price.toString()) }}元</p>
-        <button class="py-2 px-8 text-white font-bold rounded-lg bg-primary mb-4">
-          馬上支持 !
-        </button>
+        <BaseButton class="mb-4">馬上支持 !</BaseButton>
         <span class="block">已有 {{ thousandSeparator(item.peopleNum.toString()) }} 人贊助</span>
       </div>
     </div>
@@ -33,7 +31,7 @@
         />
         <span class="absolute font-bold text-xl left-3 top-0">NT$</span> </label
       ><br />
-      <button class="py-2 px-8 text-white font-bold rounded-lg bg-primary">馬上支持 !</button>
+      <BaseButton>馬上支持 !</BaseButton>
     </div>
     <img
       src="../../assets/images/murr-love.svg"
@@ -44,6 +42,8 @@
 </template>
 
 <script setup lang="ts">
+import BaseButton from '../base/BaseButton.vue';
+
 const donationPlans = [
   {
     title: '喵星人之友',

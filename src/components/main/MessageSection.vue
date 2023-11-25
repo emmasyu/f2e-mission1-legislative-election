@@ -55,13 +55,13 @@
         </div>
       </div>
       <div class="text-center">
-        <button
-          class="w-full lg:max-w-[400px] py-2 rounded-lg font-bold text-white bg-primary mb-2"
-        >
-          送出
-        </button>
+        <BaseButton class="w-full lg:max-w-[400px] mb-2">送出</BaseButton>
       </div>
     </form>
     <p class="text-primary">為了喵喵站出來！</p>
   </div>
 </template>
+
+<script setup lang="ts">
+import BaseButton from "../base/BaseButton.vue";
+</script>
