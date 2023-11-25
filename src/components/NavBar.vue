@@ -29,11 +29,11 @@
           <li class="flex sm:max-md:hidden max-sm:gap-4 max-sm:mt-4 max-sm:pb-4">
             <a
               href="#"
-              class="hover:opacity-70 max-sm:drop-shadow-[3px_3px_0_#F4CA80]"
+              class="hover:fill-secondary-light max-sm:drop-shadow-[3px_3px_0_#F4CA80]"
               v-for="(icon, i) in [IconFacebook, IconInstagram, IconYoutube]"
               :key="i"
               @click="closeMenu"
-              ><component :is="icon" color="#00A199" bgColor="white"
+              ><component :is="icon" class="fill-white max-sm:hover:fill-secondary"
             /></a>
           </li>
         </ul>
