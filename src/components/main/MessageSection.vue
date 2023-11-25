@@ -14,40 +14,16 @@
     <form action="" class="text-primary text-start">
       <div class="lg:flex flex-wrap justify-center lg:gap-20 mb-10">
         <div class="sm:basis-[336px]">
-          <label for="name"
-            >您的姓名
-            <input
-              type="text"
-              id="name"
-              class="w-full px-2.5 py-2.5 mb-7 mt-3 text-xs border border-[#C9F1EF] rounded-[4px] focus:outline-none focus:border-primary placeholder:text-primary"
-              placeholder="輸入您的姓名"
-            />
-          </label>
-          <label for="email"
-            >您的Email
-            <input
-              type="email"
-              id="email"
-              class="w-full px-2.5 py-2.5 mb-7 mt-3 text-xs border border-[#C9F1EF] rounded-[4px] focus:outline-none focus:border-primary placeholder:text-primary"
-              placeholder="請輸入您的Email"
-            />
-          </label>
-          <label for="telephone"
-            >您的手機
-            <input
-              type="tel"
-              id="telephone"
-              class="w-full px-2.5 py-2.5 mb-7 mt-3 text-xs border border-[#C9F1EF] rounded-[4px] focus:outline-none focus:border-primary placeholder:text-primary"
-              placeholder="請輸入您的電話"
-            />
-          </label>
+          <BaseInput id="name" type="text" placeholder="請輸入您的姓名">您的姓名</BaseInput>
+          <BaseInput id="email" type="email" placeholder="請輸入您的Email">您的Email</BaseInput>
+          <BaseInput id="telephone" type="tel" placeholder="請輸入您的電話">您的手機</BaseInput>
         </div>
         <div class="basis-[336px]">
           <label for="message"
             >您的建言
             <textarea
               id="message"
-              class="w-full px-2.5 py-2.5 mb-10 mt-3 text-xs border border-[#C9F1EF] rounded-[4px] focus:outline-none focus:border-primary placeholder:text-primary"
+              class="w-full px-2.5 py-2.5 mb-10 mt-3 text-xs border border-[#C9F1EF] rounded-[4px] hover:border-primary focus:outline-none focus:border-primary focus:bg-[#E9FEFD] placeholder:text-primary"
               placeholder="我想和喵喵說...."
               rows="14"
             />
@@ -63,5 +39,6 @@
 </template>
 
 <script setup lang="ts">
-import BaseButton from "../base/BaseButton.vue";
+import BaseButton from '../base/BaseButton.vue'
+import BaseInput from '../base/BaseInput.vue'
 </script>
