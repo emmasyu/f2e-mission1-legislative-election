@@ -43,7 +43,7 @@ const navItem: { tag: string; name: string }[] = [
   { tag: '#news', name: '最新活動' },
   { tag: '#issue', name: '政策議題' },
   { tag: '#donation', name: '小額捐款' },
-  { tag: '#email', name: '服務信箱' }
+  { tag: '#message', name: '服務信箱' }
 ]
 </script>
 
