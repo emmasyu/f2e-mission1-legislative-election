@@ -8,6 +8,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/donation',
+      name: 'donation',
+      component: () => import('../views/DonationView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {

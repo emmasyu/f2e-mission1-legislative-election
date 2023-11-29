@@ -11,30 +11,37 @@
     </p>
     <div class="relative z-10 flex justify-center flex-wrap gap-10 mb-10 sm:mb-[120px]">
       <div
-        v-for="item in donationPlans"
+        v-for="item in donations"
         :key="item.title"
         class="w-60 py-8 px-4 bg-white border border-primary rounded-[20px] shadow-[6px_8px_0_#FADCA8] hover:shadow-[6px_8px_0_#F4CA80]"
       >
         <h3 class="text-[28px] font-bold mb-4">「{{ item.title }}」</h3>
-        <p class="text-xl mb-10">捐款新台幣{{ thousandSeparator(item.price.toString()) }}元</p>
-        <BaseButton class="mb-4">馬上支持 !</BaseButton>
-        <span class="block">已有 {{ thousandSeparator(item.peopleNum.toString()) }} 人贊助</span>
+        <p class="text-xl mb-10">
+          捐款新台幣{{ $filters.thousandSeparator(item.price.toString()) }}元
+        </p>
+        <BaseButton class="mb-4 text-white" @click="pushToDonation(item)">馬上支持 !</BaseButton>
+        <span class="block"
+          >已有 {{ $filters.thousandSeparator(item.peopleNum.toString()) }} 人贊助</span
+        >
       </div>
     </div>
-    <div class="relative z-10">
-      <p class="text-[28px] font-bold mb-4">「 自訂贊助金額 」</p>
+    <form @submit.prevent="pushToDonation(customDonation)" class="relative z-10">
+      <p class="text-[28px] font-bold mb-4">{{ customDonation.title }}</p>
       <p class="sm:text-xl font-bold text-primary-light mb-4">目前小額贊助總金額：NT$ 655,873</p>
       <label for="price" class="relative group">
         <input
-          type="text"
+          type="number"
           class="max-w-[416px] w-full bg-transparent border-b-2 border-primary text-xl p-2 ps-16 mb-8 group-hover:border-primary-light focus:outline-none focus:bg-[#E9FEFD]"
+          min="1"
+          v-model.number="customDonation.price"
+          @change="setCustomPrice(customDonation.price)"
         />
         <span class="absolute font-bold text-xl left-3 top-0 group-hover:text-primary-light"
           >NT$</span
         > </label
       ><br />
-      <BaseButton>馬上支持 !</BaseButton>
-    </div>
+      <BaseButton class="text-white">馬上支持 !</BaseButton>
+    </form>
     <img
       src="../../assets/images/murr-love.svg"
       alt="murr love"
@@ -45,31 +52,16 @@
 
 <script setup lang="ts">
 import BaseButton from '../base/BaseButton.vue'
+import router from '@/router'
+import { useDonationStore } from '@/stores/donation'
+import { storeToRefs } from 'pinia'
 
-const donationPlans = [
-  {
-    title: '喵星人之友',
-    price: 600,
-    peopleNum: 9957
-  },
-  {
-    title: '喵星大使',
-    price: 6000,
-    peopleNum: 2000
-  },
-  {
-    title: '喵星傳奇',
-    price: 60000,
-    peopleNum: 999
-  }
-]
+const donationStore = useDonationStore()
+const { donations, customDonation } = storeToRefs(donationStore)
+const { setCurrentDonation, setCustomPrice } = donationStore
 
-function thousandSeparator(num: string) {
-  const n = parseInt(num, 10)
-  return `${n
-    .toFixed(0)
-    .replace(/./g, (c, i, a) =>
-      i && c !== '.' && (a.length - i) % 3 === 0 ? `, ${c}`.replace(/\s/g, '') : c
-    )}`
+function pushToDonation(plan: { title: string; price: number }): void {
+  setCurrentDonation(plan.title)
+  router.push({ name: 'donation' })
 }
 </script>
