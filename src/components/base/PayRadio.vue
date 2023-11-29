@@ -15,8 +15,13 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  list: Array,
-  name: String
-})
+defineProps<{
+  list: {
+    id: string;
+    value: string;
+    checked: boolean;
+    img: string;
+  }[];
+  name: string;
+}>();
 </script>
