@@ -1,46 +1,58 @@
-# mission1-legislative-election-official-website
+# Legislative Election Official Website
 
-This template should help get you started developing with Vue 3 in Vite.
+![Static Badge](https://img.shields.io/badge/Vue-3.3.4-green?style=social&logo=vuedotjs&logoColor=%234FC08D) ![Static Badge](https://img.shields.io/badge/Vite-4.4.11-%23646CFF?style=social&logo=vite&logoColor=%23646CFF) ![Static Badge](https://img.shields.io/badge/npm-10.1-%23CB3837?style=social&logo=npm&logoColor=%23CB3837) ![Static Badge](https://img.shields.io/badge/node%2Cjs-20.9-%23339933?style=social&logo=node.js&logoColor=%23339933)
 
-## Recommended IDE Setup
+立委選舉官網
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Demo
 
-## Type Support for `.vue` Imports in TS
+https://emmasyu.github.io/f2e-mission1-legislative-election/
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Introduction
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+以虛擬人物作為立委候選人，打造形象官網，塑造立委形象
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- 清楚顯示立委政見主張資訊
+- 明確指引用戶前往小額捐款
 
-## Customize configuration
+## Project operation mode
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- `npm install` -- 安裝依賴模組
+- `npm run dev` -- 運行伺服器及開發
+- 使用 Node.js 20.9.0
+- npm 10.1
 
-## Project Setup
+## Folder description
 
-```sh
-npm install
+```
+├─ index.html	# 網站首頁 (render)
+│
+├─ /src	# 要編譯的原始碼
+│	├─ App.vue	# Vue 掛載於 index.html 的主檔案
+│	├─ main.ts	# nodejs 運行進入點
+│	├─ /assets	# 放置圖片、CSS 等資源
+│	├─ /components	# vue 拆分組件
+│	├─ /filters	# 全域使用的 function
+│	├─ /router	# 路由配置
+│	├─ /stores	# 狀態管理
+│	├─ /views	# 頁面
+│		├─ DonationView.vue	# 捐款頁面
+│		├─ HoneView.vue	# 首頁
+│
+├─ /public	# 不需編譯的資源檔案
+
 ```
 
-### Compile and Hot-Reload for Development
+### Use technology and libraries
 
-```sh
-npm run dev
-```
+- Vue.js
+- Vue Router
+- Pinia
+- Vite
+- Tailwindcss
+- Typescript
 
-### Type-Check, Compile and Minify for Production
+### Features
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- [x] RWD 版面樣式
+- [ ] 滾動視差
