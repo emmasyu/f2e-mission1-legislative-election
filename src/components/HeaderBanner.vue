@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen box">
+  <div class="w-full h-screen box" id="header">
     <div class="w-full h-full relative flex justify-center items-center overflow-hidden">
       <img
         src="../assets/images/header-cat.svg"

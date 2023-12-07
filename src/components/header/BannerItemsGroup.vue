@@ -1,12 +1,13 @@
 <template>
   <div class="fixed z-10 w-full h-screen">
     <div
-      class="relative max-w-[360px] sm:max-w-[600px] lg:max-w-[960px] xl:max-w-[1220px] 2xl:max-w-[1460px] h-full mx-auto overflow-hidden"
+      class="relative max-w-[360px] sm:max-w-[600px] lg:max-w-[960px] xl:max-w-[1220px] 2xl:max-w-[1460px] h-full mx-auto overflow-hidden banner-items"
     >
       <template v-for="(item, i) in itemList" :key="i">
         <BannerItems
           :msg="items[item.category].text"
           :class="[items[item.category].bgColor, item.classList]"
+          :id="`banner-item-${i}`"
         />
       </template>
     </div>
@@ -15,6 +16,108 @@
 
 <script setup lang="ts">
 import BannerItems from './BannerItems.vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted } from 'vue'
+
+gsap.registerPlugin(ScrollTrigger)
+
+let mm = gsap.matchMedia()
+let tl = gsap.timeline()
+mm.add(
+  {
+    is2Xl: `(min-width: 1536px)`,
+    isXl: `(min-width: 1280px)`,
+    isLg: `(min-width: 1024px)`,
+    isMd: `(max-width: 1023px)`,
+    reduceMotion: '(prefers-reduced-motion: reduce)'
+  },
+  (context) => {
+    const { is2Xl, isXl, isLg } = context.conditions as { [key: string]: boolean }
+    onMounted(() => {
+      tl.to('.banner-items', {
+        y: '-100vh',
+        scrollTrigger: {
+          trigger: '#header',
+          start: 'top top',
+          end: 'bottom top',
+          pin: true,
+          scrub: true
+        }
+      })
+        .to('#banner-item-0', {
+          y: isLg ? -15 : -60,
+          rotate: 5,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-1', {
+          x: 10,
+          y: isLg ? -85 : -85,
+          rotate: 5,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-2', {
+          xPercent: isLg ? -35 : -10,
+          y: isLg ? -45 : -60,
+          rotate: -4.2,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-3', {
+          xPercent: isXl ? -50 : -20,
+          y: isXl ? -165 : -130,
+          rotate: isXl ? 7 : 10,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-4', {
+          xPercent: isXl ? 30 : 0,
+          y: -95,
+          rotate: isXl ? -6.3 : 15,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-5', {
+          xPercent: is2Xl ? 35 : 30,
+          y: is2Xl ? -85 : -20,
+          rotate: 15,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-6', {
+          xPercent: is2Xl ? 70 : 0,
+          y: is2Xl ? -90 : -70,
+          rotate: -8.8,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+        .to('#banner-item-7', {
+          y: -5,
+          rotate: 2,
+          scrollTrigger: {
+            end: '300',
+            scrub: true
+          }
+        })
+    })
+  }
+)
 
 const items: { [key: string]: { [key: string]: string } } = {
   education: {

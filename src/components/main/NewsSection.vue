@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full min-h-screen" id="news">
-    <img src="../../assets/images/cat-ear.svg" alt="background" class="-mb-0.5" />
+  <div class="relative w-full min-h-screen" id="news">
+    <img src="../../assets/images/cat-ear.svg" alt="background" class="absolute top-0.5 -translate-y-full" />
     <div
       class="relative pt-16 sm:pt-24 px-5 sm:ps-12 bg-primary rounded-t-[50px] sm:rounded-t-[80px] md:rounded-t-[100px] lg:rounded-t-[130px] xl:rounded-t-[160px] 2xl:rounded-t-[200px]"
     >
