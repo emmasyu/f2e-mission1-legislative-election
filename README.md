@@ -27,7 +27,7 @@ https://emmasyu.github.io/f2e-mission1-legislative-election/
 ```
 ├─ index.html	# 網站首頁 (render)
 │
-├─ /src	# 要編譯的原始碼
+├─ /src # 要編譯的原始碼
 │	├─ App.vue	# Vue 掛載於 index.html 的主檔案
 │	├─ main.ts	# nodejs 運行進入點
 │	├─ /assets	# 放置圖片、CSS 等資源
@@ -55,4 +55,5 @@ https://emmasyu.github.io/f2e-mission1-legislative-election/
 ### Features
 
 - [x] RWD 版面樣式
-- [ ] 滾動視差
+- [x] 滾動視差
+- [ ] swiper輪播
